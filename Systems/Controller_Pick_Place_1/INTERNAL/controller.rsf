@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ProductSettings version="1.0">
+  <Products>
+    <Product name="RobotWare" version="6.08.1040" id="abb.robotics.robotware">
+      <Settings>
+        <Setting id="abb.robotics.robotware.base" displayName="RobotWare Base" robot="1" />
+        <Setting id="abb.robotics.robotware.languages.english" displayName="English" robot="1" />
+        <Setting id="abb.robotics.robotware.options.worldzones" displayName="608-1 World Zones" robot="1" />
+        <Setting id="abb.robotics.robotware.drivesystems.drive.dc430a2.du430a2.dm430a" displayName="Drive System IRB 120/140/260/360/910SC/1200/1400/1520/1600/1660ID" robot="1" />
+        <Setting id="abb.robotics.robotware.drivesystems.powerunits.adu1.790a.er2" displayName="ADU-790A in position X3" robot="1" />
+        <Setting id="abb.robotics.robotware.drivesystems.powerunits.adu2.790a.er2" displayName="ADU-790A in position Y3" robot="1" />
+        <Setting id="abb.robotics.robotware.drivesystems.powerunits.adu3.790a.er2" displayName="ADU-790A in position Z3" robot="1" />
+        <Setting id="abb.robotics.robotware.options.calaxis" displayName="Axis Calibration" robot="1" />
+        <Setting id="abb.robotics.robotware.robots.irb1660id.4-1_55" displayName="IRB 1660ID-4/1.55" robot="1" />
+      </Settings>
+    </Product>
+  </Products>
+</ProductSettings>

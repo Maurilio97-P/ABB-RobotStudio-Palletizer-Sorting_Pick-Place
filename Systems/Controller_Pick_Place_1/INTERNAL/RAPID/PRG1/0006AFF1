@@ -1,0 +1,134 @@
+MODULE Module1
+    CONST robtarget Target_30:=[[210.484,-535.003,659.509563159],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_20:=[[210.484,-535.003,388.047028658],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_10_Pick_gr:=[[210.484,-535.003,180],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_10_Pick_pq:=[[210.488,-535,80],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_60_pq:=[[-606,-390,1099.439558744],[0,0.707106781,0.707106781,0],[-2,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_50_pq:=[[-606,-390,486.324432044],[0,0.707106781,0.707106781,0],[-2,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_40_Place_pq:=[[-606,-390,244],[0,0.707106781,0.707106781,0],[-2,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_60_gr:=[[-625,-395,1107.166955268],[0,-0.707106781,0.707106781,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_50_gr:=[[-625,-395,582.196057738],[0,-0.707106781,0.707106781,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_40_Place_gr:=[[-625,-395,344],[0,-0.707106781,0.707106781,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !***********************************************************
+    !
+    ! Module:  Module1
+    !
+    ! Description:
+    !   <Insert description here>
+    !
+    ! Author: Maurilio
+    !
+    ! Version: 1.0
+    !
+    !***********************************************************
+    
+    VAR num i:=0;
+    VAR num off_pq:=0;
+    VAR num height_pq:=100;
+    VAR num off_gr:=0;
+    VAR num height_gr:=200;
+    CONST robtarget HOME:=[[1104.222103807,0,1137],[0.5,0,0.866025404,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    VAR wzstationary obstacle;
+    CONST robtarget Target_00_test:=[[863.651388816,-688.049895242,1136.999985424],[0.471981945,0.285830632,0.817496693,-0.165024395],[-1,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_10_test:=[[506.226977226,-981.346320927,1137.000114297],[0.426972887,0.45064673,0.739538717,-0.260181022],[-1,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_20_test:=[[-422.599832723,-1020.154776185,1136.999978871],[0.277778532,0.720081419,0.481126538,-0.415739211],[-2,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_30_test:=[[-1048.084035334,-347.600645778,1137.000114297],[0.079717809,0.854947485,0.138075298,-0.493604175],[-2,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    
+    !***********************************************************
+    !
+    ! Procedure main
+    !
+    !   This is the entry point of your program
+    !
+    !***********************************************************
+    PROC main()
+        !Add your code here
+        MoveJ HOME,v1000,z100,TCP_VentosaTool\WObj:=wobj0;
+        create_box;
+        WHILE TRUE DO
+            IF DI_Sensor_Inf=1 AND DI_Sensor_Sup=0 PathCaja_pq;
+            IF DI_Sensor_Inf=1 AND DI_Sensor_Sup=1 PathCaja_gr;
+        ENDWHILE
+    ENDPROC
+    
+    PROC create_box()
+        FOR i FROM 1 TO 3 DO
+            ! Small box
+            Set DO_Caja_pq;
+            WaitTime 2;
+            Reset DO_Caja_pq;
+            ! Big box
+            Set DO_Caja_gr;
+            WaitTime 2;
+            Reset DO_Caja_gr;
+        ENDFOR
+    ENDPROC
+    
+    PROC PathCaja_gr()
+        Path_Pick_gr;
+        Path_Place_gr;
+    ENDPROC
+    
+    PROC PathCaja_pq()
+        Path_Pick_pq;
+        Path_Place_pq;
+    ENDPROC
+    
+    PROC Path_Pick_gr()
+        MoveJ Target_30,v1000,z100,TCP_VentosaTool\WObj:=WO_Pick;
+        MoveL Target_20,v1000,z100,TCP_VentosaTool\WObj:=WO_Pick;
+        MoveLDO Target_10_Pick_gr,v500,fine,TCP_VentosaTool\WObj:=WO_Pick,DO_Ventosa,1;
+        WaitTime 1;
+        MoveL Target_20,v1000,z100,TCP_VentosaTool\WObj:=WO_Pick;
+        MoveL Target_30,v1000,z100,TCP_VentosaTool\WObj:=WO_Pick;
+    ENDPROC
+    
+    PROC Path_Pick_pq()
+        MoveJ Target_30,v1000,z100,TCP_VentosaTool\WObj:=WO_Pick;
+        MoveL Target_20,v1000,z100,TCP_VentosaTool\WObj:=WO_Pick;
+        MoveLDO Target_10_Pick_pq,v500,fine,TCP_VentosaTool\WObj:=WO_Pick,DO_Ventosa,1;
+        WaitTime 1;
+        MoveL Target_20,v1000,z100,TCP_VentosaTool\WObj:=WO_Pick;
+        MoveL Target_30,v1000,z100,TCP_VentosaTool\WObj:=WO_Pick;
+    ENDPROC
+    
+    PROC Path_Place_pq()
+        MoveJ Target_60_pq,v1000,z100,TCP_VentosaTool\WObj:=WO_Place_pq;
+        MoveL offs(Target_50_pq,0,0,off_pq),v1000,z100,TCP_VentosaTool\WObj:=WO_Place_pq;
+        MoveLDO offs(Target_40_Place_pq,0,0,off_pq+40),v500,fine,TCP_VentosaTool\WObj:=WO_Place_pq,DO_Ventosa,0;
+        WaitTime 1;
+        MoveL offs(Target_50_pq,0,0,off_pq),v1000,z100,TCP_VentosaTool\WObj:=WO_Place_pq;
+        off_pq:=off_pq+height_pq;
+        MoveL Target_60_pq,v1000,z100,TCP_VentosaTool\WObj:=WO_Place_pq;
+        MoveJ HOME,v1000,z100,TCP_VentosaTool\WObj:=wobj0;
+    ENDPROC
+    
+    PROC Path_Place_gr()
+        MoveJ Target_60_gr,v1000,z100,TCP_VentosaTool\WObj:=WO_Place_gr;
+        MoveL offs(Target_50_gr,0,0,off_gr),v1000,z100,TCP_VentosaTool\WObj:=WO_Place_gr;
+        MoveLDO offs(Target_40_Place_gr,0,0,off_gr+40),v500,fine,TCP_VentosaTool\WObj:=WO_Place_gr,DO_Ventosa,0;
+        WaitTime 1;
+        MoveL offs(Target_50_gr,0,0,off_gr),v1000,z100,TCP_VentosaTool\WObj:=WO_Place_gr;
+        off_gr:=off_gr+height_gr;
+        MoveL Target_60_gr,v1000,z100,TCP_VentosaTool\WObj:=WO_Place_gr;
+        MoveJ HOME,v1000,z100,TCP_VentosaTool\WObj:=wobj0;
+    ENDPROC
+    
+    PROC my_power_on()
+        VAR shapedata volume;
+        CONST pos p1 := [-734, -2140, -229];
+        CONST pos p2 := [-1734, 1860, 1741];
+        !Define a box between the corners p1 and p2
+        WZBoxDef \Inside, volume, p1, p2;
+        !Define a box between the corners p1 and p2
+        WZLimSup \Stat, obstacle, volume;
+    ENDPROC
+    
+    PROC Path_Test_WZ_Collision()
+        MoveJ HOME,v500,z100,TCP_VentosaTool\WObj:=wobj0;
+        MoveJ Target_00_test,v1000,z100,TCP_VentosaTool\WObj:=wobj0;
+        MoveJ Target_10_test,v1000,z100,TCP_VentosaTool\WObj:=wobj0;
+        MoveJ Target_20_test,v500,z100,TCP_VentosaTool\WObj:=wobj0;
+        MoveJ Target_30_test,v500,z100,TCP_VentosaTool\WObj:=wobj0;
+    ENDPROC
+ENDMODULE

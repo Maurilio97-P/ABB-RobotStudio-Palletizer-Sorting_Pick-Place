@@ -1,0 +1,45 @@
+%%%
+    VERSION:1
+    LANGUAGE:ENGLISH
+%%%
+
+MODULE CAL_AX(SYSMODULE,VIEWONLY)
+    ! $Revision: 1.0 $
+    !
+    ! AxisCalibration
+    !
+    VAR bool axcalloaded:=FALSE;
+    PROC AxisCalibration()
+        VAR num TPReadDummy;
+        VAR num answer;        
+        
+        IF axcalloaded = FALSE THEN
+            Load \Dynamic, "RELEASE:/options/cal_axis/calax_proc.sys";
+            axcalloaded:=TRUE;
+        ENDIF
+        %"AxisProc"%;
+        UnLoad "RELEASE:/options/cal_axis/calax_proc.sys";
+        axcalloaded:=FALSE;
+        TPShow TP_LATEST;
+        RETURN;
+        
+        ERROR
+        TEST ERRNO
+            CASE ERR_FILNOTFND:
+                RAISE;
+            CASE ERR_LOADED:
+                SkipWarn;
+                TRYNEXT;
+            default:
+                TPShow TP_LATEST;
+        ENDTEST
+    UNDO
+        IF axcalloaded THEN
+            UnLoad "RELEASE:/options/cal_axis/calax_proc.sys";
+            axcalloaded:=FALSE;
+        ENDIF
+        TPShow TP_LATEST;
+    ENDPROC  
+ ENDMODULE
+
+
