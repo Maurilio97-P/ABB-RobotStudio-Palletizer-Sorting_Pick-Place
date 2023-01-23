@@ -40,9 +40,9 @@ Version 6.08.01.00 (IRB 1660ID)
 ## Tutorial:
 This simple example was developed to learn the basics of RobotStudio and to make a **step-by-step tutorial** on how to use some of the main tools and to show how to create a new project from scratch. 
 
-[<img src="https://github.com/Maurilio97-P/ABB-RobotStudio-Sorting_Pick-Place/blob/main/Images/sorting.PNG" width="50%">](https://youtu.be/y0FjnO8AysQ "Tutorial - Pick&Place con RobotStudio de ABB (Proyecto Final)")
+[<img src="https://github.com/Maurilio97-P/ABB-RobotStudio-Sorting_Pick-Place/blob/main/Images/thumbnail.PNG" width="50%">](https://youtu.be/y0FjnO8AysQ "Tutorial - Pick&Place con RobotStudio de ABB (Proyecto Final)")
 
-The tutorial consists of 4 parts:
+### The tutorial consists of 4 parts:
 
 **Part 1 – Suction Cup with Smart Components**
 
@@ -59,3 +59,17 @@ For the Pick & Place, trajectories were made using Work Objects with respect to 
 **Part 4 – Security Measures with ISO 10218, QuickStop and World Zones**
 
 Finally, a brief presentation of the ISO 10218:2011 standard is made and the respective CAD models that represent the security elements established in the ISO standard are imported. A QuickStop and Start button is implemented to simulate the scenario in which the light curtain detects a person entering the palletizer and the World Zone function is added to stop the robot if it is inside a special zone defined by the user.
+
+**Unpacking a station (download the .rspag file):**
+1. Start RobotStudio and click on the File tab, click Open and then browse to the folder and select the Pack&Go file, the Unpack & Work wizard opens.
+2. In the Welcome to the Unpack & Work Wizard page, click Next.
+3. In the Select package page, click Browse and then select the Pack & Go file to unpack and the Target folder. Click Next.
+4. In the Library handling page select the target library. Two options are available, Load files from local PC or Load files from Pack & Go. Click the option to select the location for loading the required files, and click Next.
+5. In the Virtual Controller page, select the RobotWare version and then click Locations to access the RobotWare Add-in and Media pool folders. Optionally, select the check box to automatically restore backup. Click Next.
+6. In the Ready to unpack page, review the information and then click Finish.
+
+## Contact Info:
+maurilio.pp97@gmail.com
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
