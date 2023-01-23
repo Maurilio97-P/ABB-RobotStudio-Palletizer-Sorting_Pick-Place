@@ -1,7 +1,7 @@
 # ABB RobotStudio - Industrial Palletizing Robot - Sorting and Pick&Place Example (IRB 1660ID)
 This is a simple example of a sorting and pick&amp;place task simulation for a palletizer using RobotStudio.
 <p align="center">
-  <img src="https://github.com/Maurilio97-P/ABB-RobotStudio-Sorting_Pick-Place/blob/main/Images/sorting.PNG" width="800" height="450">
+  <img src="https://github.com/Maurilio97-P/ABB-RobotStudio-Sorting_Pick-Place/blob/main/Images/sorting.PNG" width="800">
 </p>
 
 ## Requirements:
