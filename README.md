@@ -21,15 +21,15 @@ Version 6.08.01.00 (IRB 1660ID)
 | ABB RobotStudio       | https://new.abb.com/products/robotics/robotstudio/downloads                           |
 
 ## Project Description:
-* The palletizer focuses on sorting 2 types of boxes of different height
+The palletizer focuses on sorting 2 types of boxes of different height.
   * 3 small orange boxes (20x20x10cm)
   * 3 large green boxes (20x20x20cm)
-* that the robot must stack on each side
-* using a suction cup vacuum gripper
+  
+That the robot must stack on each side using a suction cup vacuum gripper.
 
 **Note:** the project implements **ISO 10218:2011** to add safety elements for industrial robots
 
-* The main tools used to develop this project are:
+* The **main tools** used to develop this project are:
   * Smart Components
   * Work Objects
   * RAPID code and Offsets
@@ -39,6 +39,8 @@ Version 6.08.01.00 (IRB 1660ID)
 
 ## Tutorial:
 This simple example was developed to learn the basics of RobotStudio and to make a **step-by-step tutorial** on how to use some of the main tools and to show how to create a new project from scratch. 
+
+You can watch the **video** here:
 
 [<img src="https://github.com/Maurilio97-P/ABB-RobotStudio-Sorting_Pick-Place/blob/main/Images/thumbnail.PNG" width="50%">](https://youtu.be/y0FjnO8AysQ "Tutorial - Pick&Place con RobotStudio de ABB (Proyecto Final)")
 
