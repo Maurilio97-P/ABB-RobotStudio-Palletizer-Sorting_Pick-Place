@@ -27,7 +27,7 @@ Version 6.08.01.00 (IRB 1660ID)
 * that the robot must stack on each side
 * using a suction cup vacuum gripper
 
-**Note:** the project implements **ISO 10218** to add safety elements for industrial robots
+**Note:** the project implements **ISO 10218:2011** to add safety elements for industrial robots
 
 * The main tools used to develop this project are:
   * Smart Components
@@ -46,11 +46,11 @@ The tutorial consists of 4 parts:
 
 **Part 1 – Suction Cup with Smart Components**
 
-In this section a CAD model in .SAT format is imported to generate the tool in RobotStudio and with Smart Components place a sensor on the TCP and the Attach/Detach function activated with a digital input.
+In this section a .SAT CAD model is imported to generate the gripper in RobotStudio and with Smart Components a sensor is placed on the TCP and the Attach/Detach function is activated with a digital input.
 
 **Part 2 – Conveyor with Smart Components**
 
-In this section, a conveyor is built by applying physical properties to the belt and to the boxes to be separated. Sensors are placed at the end of the conveyor and the belt is stopped if a box is detected at the end.
+In this section, a conveyor is built by applying physical properties to the belt and to the boxes. Sensors are placed at the end of the conveyor and the belt is stopped if a box is detected at the end.
 
 **Part 3 – Pick & Place with Work Objects, Offsets and Digital Signals**
 
@@ -58,4 +58,4 @@ For the Pick & Place, trajectories were made using Work Objects with respect to 
 
 **Part 4 – Security Measures with ISO 10218, QuickStop and World Zones**
 
-Finally, a brief presentation of the ISO 10218:2011 standard is made and the respective CAD models that represent the security elements established in the ISO standard are imported. A QuickStop and Start button is implemented to simulate the scenario in which the light curtain detects a person entering the robotic cell and the World Zone function is added to stop the robot if it is inside a special zone defined by the user.
+Finally, a brief presentation of the ISO 10218:2011 standard is made and the respective CAD models that represent the security elements established in the ISO standard are imported. A QuickStop and Start button is implemented to simulate the scenario in which the light curtain detects a person entering the palletizer and the World Zone function is added to stop the robot if it is inside a special zone defined by the user.
