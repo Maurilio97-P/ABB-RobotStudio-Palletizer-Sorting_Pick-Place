@@ -44,6 +44,8 @@ You can watch the **video** here:
 
 [<img src="https://github.com/Maurilio97-P/ABB-RobotStudio-Sorting_Pick-Place/blob/main/Images/thumbnail.PNG" width="50%">](https://youtu.be/y0FjnO8AysQ "Tutorial - Pick&Place con RobotStudio de ABB (Proyecto Final)")
 
+https://youtu.be/y0FjnO8AysQ
+
 ### The tutorial consists of 4 parts:
 
 **Part 1 – Suction Cup with Smart Components**
