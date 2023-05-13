@@ -64,6 +64,7 @@ For the Pick & Place, trajectories were made using Work Objects with respect to 
 
 Finally, a brief presentation of the ISO 10218:2011 standard is made and the respective CAD models that represent the security elements established in the ISO standard are imported. A QuickStop and Start button is implemented to simulate the scenario in which the light curtain detects a person entering the palletizer and the World Zone function is added to stop the robot if it is inside a special zone defined by the user.
 
+## Download:
 **Unpacking a station (download the .rspag file):**
 1. Start RobotStudio and click on the File tab, click Open and then browse to the folder and select the Pack&Go file, the Unpack & Work wizard opens.
 2. In the Welcome to the Unpack & Work Wizard page, click Next.
